@@ -23,16 +23,16 @@ Todas las librerías utilizadas se encuentran integradas en la biblioteca están
 · Sqlite3: DB-API 2.0 interfaz para bases de datos SQLite
 
 ### Módulos y funciones:
-Se utilizó la función decode_header que es proporcionada por el módulo email.header, la cual es una API heredada de la librería email (mencionada en el apartado 4.1). A continuación, se agrega un breve detalle de la función utilizada:
+Se utilizó la función decode_header que es proporcionada por el módulo email.header, la cual es una API heredada de la librería email. A continuación, se agrega un breve detalle de la función utilizada:
 
 · decode_header: Decodifica un valor de encabezado de mensaje sin convertir el juego de caracteres.
 ## Descripción de la aplicación, problemas y soluciones
 ### Descripción de la aplicación
 Al iniciar la ejecución de la aplicación se solicita al usuario la cuenta de Gmail y contraseña para iniciar la sesión. Una vez iniciada la sesión, realiza la conexión al Servidor de correo entrante (IMAP) de Gmail y busca si existen mails nuevos en la bandeja de entrada.
-En caso de identificar nuevos mails, se realiza la búsqueda de la palabra “DevOps” en cada uno de ellos y solo si la encuentra, agrega el registro (campos mencionados en el apartado 3 del presente documento) a la tabla “mails” de la base de datos “KeywordBD”.
+En caso de identificar nuevos mails, se realiza la búsqueda de la palabra “DevOps” en cada uno de ellos y solo si la encuentra, agrega el registro a la tabla “mails” de la base de datos “KeywordBD”.
 En caso de no identificar nuevos mails, la aplicación finaliza su ejecución.
 
-## Problemas y soluciones
+### Problemas y soluciones
 
 Durante el desarrollo de la aplicación surgieron varios errores los cuales fueron solucionados a través del análisis del código e investigación en varias fuentes de casos similares. Los principales fueron los siguientes:
 
@@ -63,6 +63,6 @@ A continuación, se detallan los pasos para iniciar la aplicación “Keyword”
 6. Guardar nuevos mails en la base de datos. 
 Si encuentra nuevos mails, la aplicación muestra la cantidad de mails identificados, y solo agrega a la base de datos aquellos que contienen en el body la palabra “DevOps”. Crea la tabla “mails” (en caso de no existir) e imprime el registro de dicha tabla.
 Asimismo, crea el archivo “KeywordBD.db” en el mismo directorio donde se encuentra el script “Keyword.py”.
-Si la tabla “mails” ya existe, se muestra un mensaje indicándolo, agrega el nuevo mail identificado y muestra el registro de la tabla “mails”.
+Si la tabla “mails” ya existe, se muestra un mensaje indicándolo, agrega el nuevo mail identificado y muestra el registro de la tabla.
 
 
